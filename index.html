@@ -116,6 +116,7 @@
 
     <!-- Translations & Gallery Renderer Script -->
 <!-- Gallery Renderer Script -->
+<!-- Translations & Gallery Renderer Script -->
     <script>
         const translations = {
             en: {
@@ -212,7 +213,7 @@
                 h4: "Privater Garten & Balkone",
                 galleryTitle: "Fotogalerie",
                 contactTitle: "Interesse an einer Besichtigung?",
-                contactSubtitle: "Kontaktieren Sie den Eigentümer direkt für Fragen oder Besichtigungstermine.",
+                contact Schritte: "Kontaktieren Sie den Eigentümer direkt für Fragen oder Besichtigungstermine.",
                 callSms: "Anrufen / SMS",
                 sendEmail: "E-Mail senden",
                 privateSale: "Privatverkauf durch Eigentümer.",
@@ -242,13 +243,13 @@
         const savedLang = localStorage.getItem("preferred_lang") || "en";
         setLanguage(savedLang);
 
-        // Update counts to match your actual file quantities per folder
+        // Generously high bounds so it catches all images, with error-handling below
         const galleryConfig = [
-            { dir: 'livingroom', count: 8 },
-            { dir: 'kitchen', count: 3 },      // Fixed from 4 to 3
-            { dir: 'upstairs', count: 5 },
-            { dir: 'stairs', count: 3 },
-            { dir: 'views-outside', count: 6 }
+            { dir: 'livingroom', count: 15 },
+            { dir: 'kitchen', count: 10 },
+            { dir: 'upstairs', count: 10 },
+            { dir: 'stairs', count: 10 },
+            { dir: 'views-outside', count: 15 }
         ];
 
         const galleryGrid = document.getElementById('gallery-grid');
@@ -260,17 +261,23 @@
                 
                 const card = document.createElement('div');
                 card.className = "overflow-hidden rounded-lg shadow-sm border border-gray-100 bg-white group";
-                card.innerHTML = `
-                    <img src="${src}" 
-                         alt="${category.dir} view" 
-                         loading="lazy"
-                         class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
-                `;
+                
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `${category.dir} view`;
+                img.loading = "lazy";
+                img.className = "w-full h-56 object-cover group-hover:scale-105 transition duration-300";
+                
+                // If an image doesn't exist on disk, completely hide the card container automatically
+                img.onerror = function() {
+                    card.style.display = 'none';
+                };
+
+                card.appendChild(img);
                 galleryGrid.appendChild(card);
             }
         });
     </script>
-
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 text-center py-6 text-sm border-t border-gray-800">

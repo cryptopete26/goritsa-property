@@ -115,6 +115,7 @@
     </main>
 
     <!-- Translations & Gallery Renderer Script -->
+<!-- Gallery Renderer Script -->
     <script>
         const translations = {
             en: {
@@ -220,7 +221,6 @@
         };
 
         function setLanguage(lang) {
-            // Update text elements
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
                 if (translations[lang] && translations[lang][key]) {
@@ -228,7 +228,6 @@
                 }
             });
 
-            // Update active button state
             document.querySelectorAll(".lang-btn").forEach(btn => {
                 if (btn.getAttribute("data-lang") === lang) {
                     btn.classList.add("bg-gray-800", "border", "border-gray-700");
@@ -237,18 +236,16 @@
                 }
             });
 
-            // Save preference locally
             localStorage.setItem("preferred_lang", lang);
         }
 
-        // On load: check saved lang or default to English
         const savedLang = localStorage.getItem("preferred_lang") || "en";
         setLanguage(savedLang);
 
-        // Render Gallery Dynamic Grid
+        // Update counts to match your actual file quantities per folder
         const galleryConfig = [
             { dir: 'livingroom', count: 8 },
-            { dir: 'kitchen', count: 3 },
+            { dir: 'kitchen', count: 3 },      // Fixed from 4 to 3
             { dir: 'upstairs', count: 5 },
             { dir: 'stairs', count: 3 },
             { dir: 'views-outside', count: 6 }
@@ -273,6 +270,7 @@
             }
         });
     </script>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 text-center py-6 text-sm border-t border-gray-800">

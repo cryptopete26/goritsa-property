@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Showcase | 123 Main Street</title>
-    <!-- Tailwind CSS CDN for zero-config styling -->
+    <title>Property Showcase | Goritsa Property</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased font-sans">
 
     <!-- Hero Section -->
     <header class="relative h-[70vh] min-h-[450px] bg-cover bg-center flex items-end" 
-            style="background-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.4) 100%), url('images/hero.jpg');">
+            style="background-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.4) 100%), url('images/hero/hero-01.jpg');">
         <div class="max-w-6xl mx-auto px-6 pb-12 w-full text-white">
             <span class="inline-block bg-emerald-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
                 For Sale
             </span>
-            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-2">123 Main Street</h1>
-            <p class="text-lg md:text-xl text-gray-200">Auckland, New Zealand</p>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-2">Beautiful Property in Goritsa</h1>
+            <p class="text-lg md:text-xl text-gray-200">Bulgaria</p>
         </div>
     </header>
 
@@ -25,10 +25,10 @@
     <section class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-10">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center space-x-6 md:space-x-10 text-sm md:text-base font-medium text-gray-700">
-                <div><span class="text-gray-400 block text-xs uppercase font-semibold">Price</span> €450,000</div>
+                <div><span class="text-gray-400 block text-xs uppercase font-semibold">Price</span> Contact for Price</div>
                 <div><span class="text-gray-400 block text-xs uppercase font-semibold">Bedrooms</span> 3</div>
                 <div><span class="text-gray-400 block text-xs uppercase font-semibold">Bathrooms</span> 2</div>
-                <div><span class="text-gray-400 block text-xs uppercase font-semibold">Area</span> 140 m²</div>
+                <div><span class="text-gray-400 block text-xs uppercase font-semibold">Location</span> Goritsa</div>
             </div>
             <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg transition text-sm">
                 Get in Touch
@@ -39,81 +39,94 @@
     <!-- Main Content Grid -->
     <main class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
         
-        <!-- Left Column: Details & Gallery (2 cols) -->
+        <!-- Left Column: Details & Gallery -->
         <div class="lg:col-span-2 space-y-12">
             
             <!-- Description -->
             <section class="space-y-4">
                 <h2 class="text-2xl font-bold text-gray-900">About the Property</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Welcome to this modern, light-filled family home situated in a quiet neighborhood. Featuring an open-plan living area, renovated kitchen with modern appliances, and a private north-facing garden perfect for entertaining.
-                </p>
-                <p class="text-gray-600 leading-relaxed">
-                    Conveniently located near public transport, top-rated local schools, and shopping amenities. Ready for immediate occupancy or rental investment.
+                    Spacious residential property located in Goritsa. Features modern living spaces, great outdoor views, and well-maintained interiors throughout.
                 </p>
             </section>
 
             <!-- Key Features -->
             <section class="space-y-4">
-                <h3 class="text-xl font-bold text-gray-900">Key Highlights</h3>
+                <h3 class="text-xl font-bold text-gray-900">Highlights</h3>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-600">
-                    <li class="flex items-center space-x-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <span>Open-plan living & dining</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <span>Double glazing throughout</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <span>Heat pump & insulation</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <span>Off-street parking / Garage</span>
-                    </li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span>Fully furnished kitchen</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span>Spacious living rooms & stairs</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span>Panoramic outside views</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span>Private yard & balconies</span></li>
                 </ul>
             </section>
 
-            <!-- Image Gallery -->
+            <!-- Photo Gallery Grid -->
             <section class="space-y-4">
                 <h3 class="text-xl font-bold text-gray-900">Photo Gallery</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <img src="images/photo-1.jpg" alt="Living Room" class="w-full h-56 object-cover rounded-lg shadow-sm border border-gray-100">
-                    <img src="images/photo-2.jpg" alt="Kitchen" class="w-full h-56 object-cover rounded-lg shadow-sm border border-gray-100">
-                    <img src="images/photo-3.jpg" alt="Master Bedroom" class="w-full h-56 object-cover rounded-lg shadow-sm border border-gray-100">
-                    <img src="images/hero.jpg" alt="Exterior View" class="w-full h-56 object-cover rounded-lg shadow-sm border border-gray-100">
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Populated dynamically via JS script below -->
                 </div>
             </section>
         </div>
 
-        <!-- Right Column: Contact Card (1 col) -->
+        <!-- Right Column: Contact Card -->
         <aside class="lg:col-span-1">
             <div id="contact" class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm sticky top-24 space-y-6">
                 <h3 class="text-xl font-bold text-gray-900">Interested in Viewing?</h3>
-                <p class="text-sm text-gray-500">Contact the owner directly to ask questions or arrange a private inspection.</p>
+                <p class="text-sm text-gray-500">Contact the owner directly to ask questions or schedule an inspection.</p>
                 
                 <div class="space-y-3 pt-2">
-                    <a href="tel:+1234567890" class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition">
+                    <a href="tel:+359000000000" class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition">
                         <span>📞</span> Call / SMS
                     </a>
-                    <a href="mailto:owner@example.com?subject=Inquiry regarding 123 Main Street" class="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-medium py-3 px-4 rounded-lg transition">
+                    <a href="mailto:owner@example.com?subject=Inquiry regarding Goritsa Property" class="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-medium py-3 px-4 rounded-lg transition">
                         <span>✉️</span> Send Email
                     </a>
                 </div>
 
                 <div class="border-t border-gray-100 pt-4 text-xs text-gray-400 text-center">
-                    Private sale by owner. No agency fees.
+                    Private sale by owner.
                 </div>
             </div>
         </aside>
 
     </main>
 
+    <!-- Gallery Renderer Script -->
+    <script>
+        // Update these numbers to match how many photos you have in each directory
+        const galleryConfig = [
+            { dir: 'livingroom', count: 8 },
+            { dir: 'kitchen', count: 4 },
+            { dir: 'upstairs', count: 5 },
+            { dir: 'stairs', count: 3 },
+            { dir: 'views-outside', count: 6 }
+        ];
+
+        const galleryGrid = document.getElementById('gallery-grid');
+        
+        galleryConfig.forEach(category => {
+            for (let i = 1; i <= category.count; i++) {
+                const num = String(i).padStart(2, '0');
+                const src = `images/${category.dir}/${category.dir}-${num}.jpg`;
+                
+                const card = document.createElement('div');
+                card.className = "overflow-hidden rounded-lg shadow-sm border border-gray-100 bg-white group";
+                card.innerHTML = `
+                    <img src="${src}" 
+                         alt="${category.dir} view" 
+                         loading="lazy"
+                         class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+                `;
+                galleryGrid.appendChild(card);
+            }
+        });
+    </script>
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 text-center py-6 text-sm border-t border-gray-800">
-        <p>© 2026 • 123 Main Street Listing</p>
+        <p>© 2026 • Goritsa Property Listing</p>
     </footer>
 
 </body>

@@ -123,11 +123,11 @@
                     or schedule an inspection.</p>
 
                 <div class="space-y-3 pt-2">
-                    <button onclick="contactPhone()"
+                    <button onclick="requestContact('phone')"
                         class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition cursor-pointer">
                         <span>📞</span> <span data-i18n="callSms">Call / SMS</span>
                     </button>
-                    <button onclick="contactEmail()"
+                    <button onclick="requestContact('email')"
                         class="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-medium py-3 px-4 rounded-lg transition cursor-pointer">
                         <span>✉️</span> <span data-i18n="sendEmail">Send Email</span>
                     </button>
@@ -154,20 +154,127 @@
         </div>
     </div>
 
-    <!-- Translations & Gallery Renderer Script -->
+    <!-- Captcha Verification Modal -->
+    <div id="captcha-modal"
+        class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm"
+        onclick="closeCaptchaModal()">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 space-y-4 shadow-2xl relative"
+            onclick="event.stopPropagation()">
+            <h3 class="text-lg font-bold text-gray-900" data-i18n="captchaTitle">Human Verification</h3>
+            <p class="text-sm text-gray-600" data-i18n="captchaSubtitle">Please solve the quick math problem below to
+                view contact details:</p>
+
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 text-center">
+                <span id="captcha-question" class="text-lg font-mono font-bold text-gray-800"></span>
+            </div>
+
+            <input type="number" id="captcha-answer" data-i18n-placeholder="captchaPlaceholder"
+                placeholder="Your answer"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+
+            <p id="captcha-error" class="text-xs text-red-500 hidden" data-i18n="captchaError">Incorrect answer, please
+                try again.</p>
+
+            <div class="flex space-x-3 pt-2">
+                <button onclick="verifyCaptcha()"
+                    class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-lg transition text-sm cursor-pointer"
+                    data-i18n="captchaVerify">Verify</button>
+                <button onclick="closeCaptchaModal()"
+                    class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2.5 px-4 rounded-lg transition text-sm cursor-pointer"
+                    data-i18n="captchaCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internal Contact Display Modal -->
+    <div id="info-modal"
+        class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm"
+        onclick="closeInfoModal()">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 space-y-4 shadow-2xl relative text-center"
+            onclick="event.stopPropagation()">
+            <h3 id="info-modal-title" class="text-lg font-bold text-gray-900">Contact Details</h3>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 my-2">
+                <span id="info-modal-val"
+                    class="text-xl font-mono font-bold text-emerald-800 select-all break-all"></span>
+            </div>
+
+            <div class="flex space-x-3 pt-2">
+                <button onclick="copyContactInfo()"
+                    class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 px-4 rounded-lg transition text-sm cursor-pointer">
+                    📋 <span id="copy-btn-text" data-i18n="copyBtn">Copy to Clipboard</span>
+                </button>
+                <button onclick="closeInfoModal()"
+                    class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2.5 px-4 rounded-lg transition text-sm cursor-pointer"
+                    data-i18n="closeBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Translations & Script Logic -->
     <script>
-        // UPDATE YOUR PHONE AND EMAIL DETAILS HERE:
-        function contactEmail() {
-            const user = "owner";           // Replace with your email username
-            const domain = "example.com";   // Replace with your email domain
-            window.location.href = `mailto:${user}@${domain}?subject=Inquiry regarding Goritsa Property`;
+        // --- CONFIGURE YOUR REAL CONTACT DETAILS HERE ---
+        const ownerEmail = "goritsa_house123@proton.me";
+        const ownerPhone = "+359878000000"; // Include country code
+
+        let currentAction = null;
+        let correctAnswer = 0;
+        let activeContactValue = "";
+
+        function requestContact(type) {
+            currentAction = type;
+
+            const num1 = Math.floor(Math.random() * 8) + 2;
+            const num2 = Math.floor(Math.random() * 8) + 2;
+            correctAnswer = num1 + num2;
+
+            document.getElementById('captcha-question').textContent = `${num1} + ${num2} = ?`;
+            document.getElementById('captcha-answer').value = '';
+            document.getElementById('captcha-error').classList.add('hidden');
+
+            document.getElementById('captcha-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('captcha-answer').focus();
         }
 
-        function contactPhone() {
-            const country = "+359";         // Country code
-            const number = "880000000";     // Replace with your phone number (exclude leading zero)
-            window.location.href = `tel:${country}${number}`;
+        function closeCaptchaModal() {
+            document.getElementById('captcha-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
+
+        function closeInfoModal() {
+            document.getElementById('info-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function verifyCaptcha() {
+            const userAns = parseInt(document.getElementById('captcha-answer').value);
+            const currentLang = localStorage.getItem("preferred_lang") || "en";
+
+            if (userAns === correctAnswer) {
+                closeCaptchaModal();
+
+                if (currentAction === 'email') {
+                    document.getElementById('info-modal-title').textContent = translations[currentLang].emailTitle;
+                    activeContactValue = ownerEmail;
+                } else if (currentAction === 'phone') {
+                    document.getElementById('info-modal-title').textContent = translations[currentLang].phoneTitle;
+                    activeContactValue = ownerPhone;
+                }
+
+                document.getElementById('info-modal-val').textContent = activeContactValue;
+                document.getElementById('copy-btn-text').textContent = translations[currentLang].copyBtn;
+                document.getElementById('info-modal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.getElementById('captcha-error').classList.remove('hidden');
+                document.getElementById('captcha-answer').focus();
+            }
+        }
+
+        document.getElementById('captcha-answer')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') verifyCaptcha();
+        });
 
         const translations = {
             en: {
@@ -193,7 +300,18 @@
                 callSms: "Call / SMS",
                 sendEmail: "Send Email",
                 privateSale: "Private sale by owner.",
-                footer: "© 2026 • Goritsa Property Listing"
+                footer: "© 2026 • Goritsa Property Listing",
+                captchaTitle: "Human Verification",
+                captchaSubtitle: "Please solve the quick math problem below to view contact details:",
+                captchaPlaceholder: "Your answer",
+                captchaError: "Incorrect answer, please try again.",
+                captchaVerify: "Verify",
+                captchaCancel: "Cancel",
+                emailTitle: "Owner Email",
+                phoneTitle: "Owner Phone Number",
+                copyBtn: "Copy to Clipboard",
+                copiedBtn: "Copied!",
+                closeBtn: "Close"
             },
             bg: {
                 forSale: "Продава се",
@@ -218,7 +336,18 @@
                 callSms: "Обаждане / SMS",
                 sendEmail: "Имейл",
                 privateSale: "Директно от собственик.",
-                footer: "© 2026 • Имот Горица"
+                footer: "© 2026 • Имот Горица",
+                captchaTitle: "Проверка за сигурност",
+                captchaSubtitle: "Моля, решете следната лесна задача, за да видите контактите:",
+                captchaPlaceholder: "Вашият отговор",
+                captchaError: "Грешен отговор, моля опитайте отново.",
+                captchaVerify: "Потвърди",
+                captchaCancel: "Отказ",
+                emailTitle: "Имейл на собственика",
+                phoneTitle: "Телефон на собственика",
+                copyBtn: "Копирай в буфера",
+                copiedBtn: "Копирано!",
+                closeBtn: "Затвори"
             },
             ru: {
                 forSale: "Продается",
@@ -243,7 +372,18 @@
                 callSms: "Звонок / SMS",
                 sendEmail: "Написать письмо",
                 privateSale: "Прямая продажа от собственника.",
-                footer: "© 2026 • Объект Горица"
+                footer: "© 2026 • Объект Горица",
+                captchaTitle: "Проверка на человека",
+                captchaSubtitle: "Пожалуйста, решите простой пример ниже, чтобы увидеть контакты:",
+                captchaPlaceholder: "Ваш ответ",
+                captchaError: "Неверный ответ, попробуйте еще раз.",
+                captchaVerify: "Подтвердить",
+                captchaCancel: "Отмена",
+                emailTitle: "Email собственника",
+                phoneTitle: "Телефон собственника",
+                copyBtn: "Копировать в буфер",
+                copiedBtn: "Скопировано!",
+                closeBtn: "Закрыть"
             },
             de: {
                 forSale: "Zu verkaufen",
@@ -268,7 +408,18 @@
                 callSms: "Anrufen / SMS",
                 sendEmail: "E-Mail senden",
                 privateSale: "Privatverkauf durch Eigentümer.",
-                footer: "© 2026 • Immobilien Goritsa"
+                footer: "© 2026 • Immobilien Goritsa",
+                captchaTitle: "Sicherheitsüberprüfung",
+                captchaSubtitle: "Bitte lösen Sie die folgende Rechenaufgabe, um die Kontaktdaten anzuzeigen:",
+                captchaPlaceholder: "Ihre Antwort",
+                captchaError: "Falsche Antwort, bitte versuchen Sie es erneut.",
+                captchaVerify: "Bestätigen",
+                captchaCancel: "Abbrechen",
+                emailTitle: "E-Mail des Eigentümers",
+                phoneTitle: "Telefonnummer des Eigentümers",
+                copyBtn: "In die Zwischenablage",
+                copiedBtn: "Kopiert!",
+                closeBtn: "Schließen"
             }
         };
 
@@ -277,6 +428,13 @@
                 const key = el.getAttribute("data-i18n");
                 if (translations[lang] && translations[lang][key]) {
                     el.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+                const key = el.getAttribute("data-i18n-placeholder");
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
                 }
             });
 
@@ -309,8 +467,22 @@
             document.body.style.overflow = 'auto';
         }
 
+        function copyContactInfo() {
+            const currentLang = localStorage.getItem("preferred_lang") || "en";
+            navigator.clipboard.writeText(activeContactValue).then(() => {
+                document.getElementById('copy-btn-text').textContent = translations[currentLang].copiedBtn;
+                setTimeout(() => {
+                    document.getElementById('copy-btn-text').textContent = translations[currentLang].copyBtn;
+                }, 2000);
+            });
+        }
+
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeCaptchaModal();
+                closeInfoModal();
+            }
         });
 
         // Gallery Population with automatic error handling for missing files

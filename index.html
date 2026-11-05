@@ -7,6 +7,12 @@
     <title>Property Showcase | Goritsa Property</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Load Modular Translation Files -->
+    <script src="lang/en.js"></script>
+    <script src="lang/bg.js"></script>
+    <script src="lang/ru.js"></script>
+    <script src="lang/de.js"></script>
 </head>
 
 <body class="bg-gray-50 text-gray-800 antialiased font-sans">
@@ -14,7 +20,7 @@
     <!-- Language Toggle Bar -->
     <div class="bg-gray-900 text-gray-300 text-xs py-2 px-6 border-b border-gray-800 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <span class="font-medium text-gray-400">Goritsa, Bulgaria</span>
+            <span class="font-medium text-gray-400" data-i18n-meta="location">Goritsa, Bulgaria</span>
             <div class="flex items-center space-x-2">
                 <button onclick="setLanguage('en')"
                     class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1 cursor-pointer"
@@ -44,29 +50,44 @@
     <header class="relative h-[70vh] min-h-[450px] bg-cover bg-center flex items-end"
         style="background-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.4) 100%), url('images/hero/hero-01.jpg');">
         <div class="max-w-6xl mx-auto px-6 pb-12 w-full text-white">
-            <span
-                class="inline-block bg-emerald-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3"
-                data-i18n="forSale">
-                For Sale
-            </span>
-            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-2" data-i18n="title">Beautiful Property in
+            <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                    class="inline-block bg-emerald-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full"
+                    data-i18n="forSale">
+                    For Sale
+                </span>
+                <span
+                    class="inline-block bg-blue-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full"
+                    data-i18n-meta="act">
+                    Act 16
+                </span>
+                <span
+                    class="inline-block bg-amber-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full"
+                    data-i18n-meta="noCommission">
+                    NO BROKER & NO COMMISSION
+                </span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-2" data-i18n-meta="title">Furnished House in
                 Goritsa</h1>
-            <p class="text-lg md:text-xl text-gray-200" data-i18n="location">Bulgaria</p>
+            <p class="text-lg md:text-xl text-gray-200" data-i18n-meta="location">Goritsa, Pomorie Municipality,
+                Bulgaria</p>
         </div>
     </header>
 
     <!-- Key Stats Bar -->
     <section class="bg-white border-b border-gray-200 shadow-sm sticky top-[33px] z-40">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-            <div class="flex items-center space-x-6 md:space-x-10 text-sm md:text-base font-medium text-gray-700">
+            <div class="flex flex-wrap items-center gap-6 md:gap-10 text-sm md:text-base font-medium text-gray-700">
                 <div><span class="text-gray-400 block text-xs uppercase font-semibold"
-                        data-i18n="priceLabel">Price</span> <span data-i18n="priceVal">Contact for Price</span></div>
+                        data-i18n="priceLabel">Price</span> <span data-i18n-meta="price">Contact for Price</span></div>
+                <div><span class="text-gray-400 block text-xs uppercase font-semibold" data-i18n="plotLabel">Plot
+                        Size</span> <span data-i18n-meta="plotSize">660 m²</span></div>
+                <div><span class="text-gray-400 block text-xs uppercase font-semibold" data-i18n="houseLabel">House
+                        Size</span> <span data-i18n-meta="houseSize">186.57 m²</span></div>
                 <div><span class="text-gray-400 block text-xs uppercase font-semibold"
-                        data-i18n="bedsLabel">Bedrooms</span> 3</div>
+                        data-i18n="bedsLabel">Bedrooms</span> <span data-i18n-meta="bedrooms">3</span></div>
                 <div><span class="text-gray-400 block text-xs uppercase font-semibold"
-                        data-i18n="bathsLabel">Bathrooms</span> 2</div>
-                <div><span class="text-gray-400 block text-xs uppercase font-semibold"
-                        data-i18n="locLabel">Location</span> Goritsa</div>
+                        data-i18n="bathsLabel">Bathrooms</span> <span data-i18n-meta="bathrooms">2+</span></div>
             </div>
             <a href="#contact"
                 class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg transition text-sm"
@@ -79,35 +100,57 @@
     <!-- Main Content Grid -->
     <main class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-        <!-- Left Column: Details & Gallery -->
+        <!-- Left Column: Details, Map & Gallery -->
         <div class="lg:col-span-2 space-y-12">
 
             <!-- Description -->
             <section class="space-y-4">
-                <h2 class="text-2xl font-bold text-gray-900" data-i18n="aboutTitle">About the Property</h2>
-                <p class="text-gray-600 leading-relaxed" data-i18n="aboutText">
-                    Spacious residential property located in Goritsa. Features modern living spaces, great outdoor
-                    views, and well-maintained interiors throughout.
+                <h2 class="text-2xl font-bold text-gray-900" data-i18n="aboutTitle">Property Description</h2>
+                <p class="text-gray-600 leading-relaxed whitespace-pre-line" data-i18n="aboutText">
+                    Spacious residential property located in Goritsa.
                 </p>
             </section>
 
-            <!-- Key Features -->
-            <section class="space-y-4">
+            <!-- Detailed Specifications & Layout -->
+            <section class="space-y-4 border-t border-gray-100 pt-8">
+                <h3 class="text-xl font-bold text-gray-900" data-i18n="detailsTitle">Additional Information & Layout
+                </h3>
+                <p class="text-gray-600 leading-relaxed whitespace-pre-line" data-i18n="detailsText">
+                    Full property features and distribution layout details.
+                </p>
+            </section>
+
+            <!-- Key Features / Highlights -->
+            <section class="space-y-4 border-t border-gray-100 pt-8">
                 <h3 class="text-xl font-bold text-gray-900" data-i18n="highlightsTitle">Highlights</h3>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-600">
                     <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
-                            data-i18n="h1">Fully furnished kitchen</span></li>
+                            data-i18n="h1">Act 16 & clean documents (no commission)</span></li>
                     <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
-                            data-i18n="h2">Spacious living rooms & stairs</span></li>
+                            data-i18n="h2">Clean mountain-sea healing air</span></li>
                     <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
-                            data-i18n="h3">Panoramic outside views</span></li>
+                            data-i18n="h3">186 sq.m house & 660 sq.m yard with no maintenance fees</span></li>
                     <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
-                            data-i18n="h4">Private yard & balconies</span></li>
+                            data-i18n="h4">23 km to Sunny Beach (20 min drive via new road)</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
+                            data-i18n="h5">35 km to Burgas (Sarafovo) Airport</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
+                            data-i18n="h6">10 min walk to mineral water spring</span></li>
                 </ul>
             </section>
 
+            <!-- Location Map -->
+            <section class="space-y-4 border-t border-gray-100 pt-8">
+                <h3 class="text-xl font-bold text-gray-900" data-i18n="mapTitle">Location</h3>
+                <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm h-72 w-full bg-gray-100">
+                    <iframe class="w-full h-full border-0" loading="lazy" allowfullscreen
+                        src="https://maps.google.com/maps?q=Goritsa%2C%20Pomorie%2C%20Bulgaria&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
+            </section>
+
             <!-- Photo Gallery Grid -->
-            <section class="space-y-4">
+            <section class="space-y-4 border-t border-gray-100 pt-8">
                 <h3 class="text-xl font-bold text-gray-900" data-i18n="galleryTitle">Photo Gallery</h3>
                 <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <!-- Populated dynamically via JS script below -->
@@ -123,15 +166,14 @@
                     or schedule an inspection.</p>
 
                 <div class="space-y-3 pt-2">
-                    <button onclick="requestContact('phone')"
-                        class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition cursor-pointer">
-                        <span>📞</span> <span data-i18n="callSms">Call / SMS</span>
-                    </button>
-                    <button onclick="requestContact('email')"
+                    <button onclick="requestEmail()"
                         class="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-medium py-3 px-4 rounded-lg transition cursor-pointer">
                         <span>✉️</span> <span data-i18n="sendEmail">Send Email</span>
                     </button>
                 </div>
+
+                <p class="text-xs text-gray-500 text-center" data-i18n="phoneNotice">Direct phone number is available
+                    inside the photo gallery.</p>
 
                 <div class="border-t border-gray-100 pt-4 text-xs text-gray-400 text-center" data-i18n="privateSale">
                     Private sale by owner.
@@ -211,19 +253,23 @@
         </div>
     </div>
 
-    <!-- Translations & Script Logic -->
+    <!-- App Logic Script -->
     <script>
-        // --- CONFIGURE YOUR REAL CONTACT DETAILS HERE ---
-        const ownerEmail = "goritsa_house123@proton.me";
-        const ownerPhone = "+359878000000"; // Include country code
+        // --- CONFIGURE YOUR REAL EMAIL HERE ---
+        const ownerEmail = "owner@example.com";
 
-        let currentAction = null;
         let correctAnswer = 0;
         let activeContactValue = "";
 
-        function requestContact(type) {
-            currentAction = type;
+        // Link external script translation variables into a single dictionary object
+        const translations = {
+            en: window.lang_en,
+            bg: window.lang_bg,
+            ru: window.lang_ru,
+            de: window.lang_de
+        };
 
+        function requestEmail() {
             const num1 = Math.floor(Math.random() * 8) + 2;
             const num2 = Math.floor(Math.random() * 8) + 2;
             correctAnswer = num1 + num2;
@@ -254,16 +300,11 @@
             if (userAns === correctAnswer) {
                 closeCaptchaModal();
 
-                if (currentAction === 'email') {
-                    document.getElementById('info-modal-title').textContent = translations[currentLang].emailTitle;
-                    activeContactValue = ownerEmail;
-                } else if (currentAction === 'phone') {
-                    document.getElementById('info-modal-title').textContent = translations[currentLang].phoneTitle;
-                    activeContactValue = ownerPhone;
-                }
+                document.getElementById('info-modal-title').textContent = translations[currentLang].ui.emailTitle;
+                activeContactValue = ownerEmail;
 
                 document.getElementById('info-modal-val').textContent = activeContactValue;
-                document.getElementById('copy-btn-text').textContent = translations[currentLang].copyBtn;
+                document.getElementById('copy-btn-text').textContent = translations[currentLang].ui.copyBtn;
                 document.getElementById('info-modal').classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
             } else {
@@ -276,168 +317,35 @@
             if (e.key === 'Enter') verifyCaptcha();
         });
 
-        const translations = {
-            en: {
-                forSale: "For Sale",
-                title: "Beautiful Property in Goritsa",
-                location: "Bulgaria",
-                priceLabel: "Price",
-                priceVal: "Contact for Price",
-                bedsLabel: "Bedrooms",
-                bathsLabel: "Bathrooms",
-                locLabel: "Location",
-                getInTouch: "Get in Touch",
-                aboutTitle: "About the Property",
-                aboutText: "Spacious residential property located in Goritsa. Features modern living spaces, great outdoor views, and well-maintained interiors throughout.",
-                highlightsTitle: "Highlights",
-                h1: "Fully furnished kitchen",
-                h2: "Spacious living rooms & stairs",
-                h3: "Panoramic outside views",
-                h4: "Private yard & balconies",
-                galleryTitle: "Photo Gallery",
-                contactTitle: "Interested in Viewing?",
-                contactSubtitle: "Contact the owner directly to ask questions or schedule an inspection.",
-                callSms: "Call / SMS",
-                sendEmail: "Send Email",
-                privateSale: "Private sale by owner.",
-                footer: "© 2026 • Goritsa Property Listing",
-                captchaTitle: "Human Verification",
-                captchaSubtitle: "Please solve the quick math problem below to view contact details:",
-                captchaPlaceholder: "Your answer",
-                captchaError: "Incorrect answer, please try again.",
-                captchaVerify: "Verify",
-                captchaCancel: "Cancel",
-                emailTitle: "Owner Email",
-                phoneTitle: "Owner Phone Number",
-                copyBtn: "Copy to Clipboard",
-                copiedBtn: "Copied!",
-                closeBtn: "Close"
-            },
-            bg: {
-                forSale: "Продава се",
-                title: "Красив имот в Горица",
-                location: "България",
-                priceLabel: "Цена",
-                priceVal: "Цена при запитване",
-                bedsLabel: "Спални",
-                bathsLabel: "Бани",
-                locLabel: "Местоположение",
-                getInTouch: "Свържете се",
-                aboutTitle: "За имота",
-                aboutText: "Просторен жилищен имот, разположен в Горица. Разполага с модерни жилищни пространства, страхотни гледки навън и отлично поддържани интериори.",
-                highlightsTitle: "Основни предимства",
-                h1: "Напълно обзаведена кухня",
-                h2: "Просторни дневни и стълби",
-                h3: "Панорамни външни гледки",
-                h4: "Частен двор и балкон",
-                galleryTitle: "Фотогалерия",
-                contactTitle: "Интересувате ли се от оглед?",
-                contactSubtitle: "Свържете се директно със собственика за въпроси или уговорка на оглед.",
-                callSms: "Обаждане / SMS",
-                sendEmail: "Имейл",
-                privateSale: "Директно от собственик.",
-                footer: "© 2026 • Имот Горица",
-                captchaTitle: "Проверка за сигурност",
-                captchaSubtitle: "Моля, решете следната лесна задача, за да видите контактите:",
-                captchaPlaceholder: "Вашият отговор",
-                captchaError: "Грешен отговор, моля опитайте отново.",
-                captchaVerify: "Потвърди",
-                captchaCancel: "Отказ",
-                emailTitle: "Имейл на собственика",
-                phoneTitle: "Телефон на собственика",
-                copyBtn: "Копирай в буфера",
-                copiedBtn: "Копирано!",
-                closeBtn: "Затвори"
-            },
-            ru: {
-                forSale: "Продается",
-                title: "Прекрасный дом в Горице",
-                location: "Болгария",
-                priceLabel: "Цена",
-                priceVal: "Цена по запросу",
-                bedsLabel: "Спальни",
-                bathsLabel: "Ванные",
-                locLabel: "Расположение",
-                getInTouch: "Связаться",
-                aboutTitle: "Об объекте",
-                aboutText: "Просторный жилой объект, расположенный в Горице. Современные жилые помещения, прекрасные виды и ухоженный интерьер.",
-                highlightsTitle: "Преимущества",
-                h1: "Полностью меблированная кухня",
-                h2: "Просторные гостиные и лестницы",
-                h3: "Панорамные виды на природу",
-                h4: "Частный двор и балконы",
-                galleryTitle: "Фотогалерея",
-                contactTitle: "Заинтересованы в осмотре?",
-                contactSubtitle: "Свяжитесь с собственником напрямую для вопросов или записи на просмотр.",
-                callSms: "Звонок / SMS",
-                sendEmail: "Написать письмо",
-                privateSale: "Прямая продажа от собственника.",
-                footer: "© 2026 • Объект Горица",
-                captchaTitle: "Проверка на человека",
-                captchaSubtitle: "Пожалуйста, решите простой пример ниже, чтобы увидеть контакты:",
-                captchaPlaceholder: "Ваш ответ",
-                captchaError: "Неверный ответ, попробуйте еще раз.",
-                captchaVerify: "Подтвердить",
-                captchaCancel: "Отмена",
-                emailTitle: "Email собственника",
-                phoneTitle: "Телефон собственника",
-                copyBtn: "Копировать в буфер",
-                copiedBtn: "Скопировано!",
-                closeBtn: "Закрыть"
-            },
-            de: {
-                forSale: "Zu verkaufen",
-                title: "Schöne Immobilie in Goritsa",
-                location: "Bulgarien",
-                priceLabel: "Preis",
-                priceVal: "Preis auf Anfrage",
-                bedsLabel: "Schlafzimmer",
-                bathsLabel: "Badezimmer",
-                locLabel: "Standort",
-                getInTouch: "Kontaktieren",
-                aboutTitle: "Über die Immobilie",
-                aboutText: "Geräumige Immobilie in Goritsa. Bietet moderne Wohnräume, tolle Aussichten und einen gepflegten Innenbereich.",
-                highlightsTitle: "Highlights",
-                h1: "Voll ausgestattete Küche",
-                h2: "Geräumige Wohnbereiche & Treppen",
-                h3: "Panoramablick nach draußen",
-                h4: "Privater Garten & Balkone",
-                galleryTitle: "Fotogalerie",
-                contactTitle: "Interesse an einer Besichtigung?",
-                contactSubtitle: "Kontaktieren Sie den Eigentümer direkt für Fragen oder Besichtigungstermine.",
-                callSms: "Anrufen / SMS",
-                sendEmail: "E-Mail senden",
-                privateSale: "Privatverkauf durch Eigentümer.",
-                footer: "© 2026 • Immobilien Goritsa",
-                captchaTitle: "Sicherheitsüberprüfung",
-                captchaSubtitle: "Bitte lösen Sie die folgende Rechenaufgabe, um die Kontaktdaten anzuzeigen:",
-                captchaPlaceholder: "Ihre Antwort",
-                captchaError: "Falsche Antwort, bitte versuchen Sie es erneut.",
-                captchaVerify: "Bestätigen",
-                captchaCancel: "Abbrechen",
-                emailTitle: "E-Mail des Eigentümers",
-                phoneTitle: "Telefonnummer des Eigentümers",
-                copyBtn: "In die Zwischenablage",
-                copiedBtn: "Kopiert!",
-                closeBtn: "Schließen"
-            }
-        };
-
         function setLanguage(lang) {
+            const currentData = translations[lang];
+            if (!currentData) return;
+
+            // 1. Update UI Text Elements
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
-                if (translations[lang] && translations[lang][key]) {
-                    el.textContent = translations[lang][key];
+                if (currentData.ui && currentData.ui[key]) {
+                    el.textContent = currentData.ui[key];
                 }
             });
 
+            // 2. Update Structured Property Metadata Elements
+            document.querySelectorAll("[data-i18n-meta]").forEach(el => {
+                const key = el.getAttribute("data-i18n-meta");
+                if (currentData.meta && currentData.meta[key]) {
+                    el.textContent = currentData.meta[key];
+                }
+            });
+
+            // 3. Update Placeholders
             document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
                 const key = el.getAttribute("data-i18n-placeholder");
-                if (translations[lang] && translations[lang][key]) {
-                    el.placeholder = translations[lang][key];
+                if (currentData.ui && currentData.ui[key]) {
+                    el.placeholder = currentData.ui[key];
                 }
             });
 
+            // 4. Highlight Active Language Flag Button
             document.querySelectorAll(".lang-btn").forEach(btn => {
                 if (btn.getAttribute("data-lang") === lang) {
                     btn.classList.add("bg-gray-800", "border", "border-gray-700");
@@ -470,9 +378,9 @@
         function copyContactInfo() {
             const currentLang = localStorage.getItem("preferred_lang") || "en";
             navigator.clipboard.writeText(activeContactValue).then(() => {
-                document.getElementById('copy-btn-text').textContent = translations[currentLang].copiedBtn;
+                document.getElementById('copy-btn-text').textContent = translations[currentLang].ui.copiedBtn;
                 setTimeout(() => {
-                    document.getElementById('copy-btn-text').textContent = translations[currentLang].copyBtn;
+                    document.getElementById('copy-btn-text').textContent = translations[currentLang].ui.copyBtn;
                 }, 2000);
             });
         }

@@ -1,0 +1,58 @@
+window.lang_de = {
+  meta: {
+    title: "Möbliertes Haus in Goritsa",
+    location: "Goritsa, Gemeinde Pomorie, Bulgarien",
+    price:
+      "Preis auf Anfrage (Verhandelbar bei Barzahlung & schnellem Abschluss)",
+    bedrooms: "3",
+    bathrooms: "2+",
+    plotSize: "660 m²",
+    houseSize: "186,57 m²",
+    act: "Akt 16",
+    noCommission: "PROVISIONSFREI (PRIVATVERKAUF)",
+  },
+  ui: {
+    forSale: "Zu verkaufen",
+    priceLabel: "Preis",
+    plotLabel: "Grundstück",
+    houseLabel: "Wohnfläche",
+    bedsLabel: "Schlafzimmer",
+    bathsLabel: "Badezimmer",
+    locLabel: "Standort",
+    getInTouch: "Kontaktieren",
+    aboutTitle: "Objektbeschreibung",
+    aboutText:
+      "PREIS IST VERHANDELBAR bei Barzahlung und schnellem Abschluss. (EINWANDFREIE DOKUMENTE). PROVISIONSFREI (PRIVATVERKAUF), günstig verkaufe ich ein möbliertes Haus in wunderbarer Lage in Goritsa, Gemeinde Pomorie. Das Dorf liegt am Fuße des Balkangebirges, 23 km von Sunny Beach entfernt (20 Min. zum Meer über eine neue Straße). Bekannt für saubere Luft mit Berg- und Meeres-Einfluss, trockenes Klima, sonnig und ruhig. Komplett freistehendes Haus ohne Wartungsgebühren, 186,57 qm Fläche, 660 qm Grundstück, mit Akt 16.",
+    detailsTitle: "Zusätzliche Informationen & Raumaufteilung",
+    detailsText:
+      "Das Haus verfügt über 3 Betondecken, Innendämmung, 3 Klimaanlagen, Holzofen, Alarmanlage und Sat-TV. Süd- und Ostausrichtung. Voll möbliert und sehr wenig genutzt. Eine Mineralquelle ist in 10 Gehminuten erreichbar, die Luft ist heilend bei Allergien und Asthma.",
+    highlightsTitle: "Highlights",
+    h1: "Akt 16 & einwandfreie Dokumente (provisionsfrei)",
+    h2: "Saubere Berg-Meer-Heiluft",
+    h3: "186 qm Haus & 660 qm Garten ohne Wartungsgebühren",
+    h4: "23 km nach Sunny Beach (20 Min. Fahrt)",
+    h5: "35 km zum Flughafen Burgas (Sarafovo)",
+    h6: "10 Min. Fußweg zur Mineralquelle",
+    mapTitle: "Standort",
+    galleryTitle: "Fotogalerie",
+    contactTitle: "Interesse an einer Besichtigung?",
+    contactSubtitle:
+      "Kontaktieren Sie den Eigentümer direkt für Fragen oder Besichtigungstermine.",
+    sendEmail: "E-Mail senden",
+    phoneNotice: "Die direkte Telefonnummer finden Sie in der Fotogalerie.",
+    privateSale:
+      "Privatverkauf durch Eigentümer (Spricht Bulgarisch, Englisch, Russisch, Deutsch).",
+    footer: "© 2026 • Immobilien Goritsa",
+    captchaTitle: "Sicherheitsüberprüfung",
+    captchaSubtitle:
+      "Bitte lösen Sie die folgende Rechenaufgabe, um die Kontaktdaten anzuzeigen:",
+    captchaPlaceholder: "Ihre Antwort",
+    captchaError: "Falsche Antwort, bitte versuchen Sie es erneut.",
+    captchaVerify: "Bestätigen",
+    captchaCancel: "Abbrechen",
+    emailTitle: "E-Mail des Eigentümers",
+    copyBtn: "In die Zwischenablage",
+    copiedBtn: "Kopiert!",
+    closeBtn: "Schließen",
+  },
+};

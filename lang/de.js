@@ -3,7 +3,7 @@ window.lang_de = {
     title: "Möbliertes Haus in Goritsa",
     location: "Goritsa, Gemeinde Pomorie, Bulgarien",
     price:
-      "Preis auf Anfrage (Verhandelbar bei Barzahlung & schnellem Abschluss)",
+      "160000€ (Verhandelbar bei Barzahlung & schnellem Abschluss)",
     bedrooms: "3",
     bathrooms: "2+",
     plotSize: "660 m²",

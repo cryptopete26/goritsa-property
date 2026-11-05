@@ -3,7 +3,7 @@ window.lang_en = {
     title: "Furnished House in Goritsa",
     location: "Goritsa, Pomorie Municipality, Bulgaria",
     price:
-      "Contact for Price (Subject to reduction for cash buyers & fast deals)",
+      "160000€ (Subject to reduction for cash buyers & fast deals)",
     bedrooms: "3",
     bathrooms: "2+",
     plotSize: "660 m²",

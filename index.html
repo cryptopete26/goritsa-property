@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-50 text-gray-800 antialiased font-sans">
 
     <!-- Language Toggle Bar -->
@@ -14,16 +16,24 @@
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <span class="font-medium text-gray-400">Goritsa, Bulgaria</span>
             <div class="flex items-center space-x-2">
-                <button onclick="setLanguage('en')" class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1" data-lang="en">
+                <button onclick="setLanguage('en')"
+                    class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1 cursor-pointer"
+                    data-lang="en">
                     <span>🇬🇧</span> <span class="font-semibold">EN</span>
                 </button>
-                <button onclick="setLanguage('bg')" class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1" data-lang="bg">
+                <button onclick="setLanguage('bg')"
+                    class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1 cursor-pointer"
+                    data-lang="bg">
                     <span>🇧🇬</span> <span>BG</span>
                 </button>
-                <button onclick="setLanguage('ru')" class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1" data-lang="ru">
+                <button onclick="setLanguage('ru')"
+                    class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1 cursor-pointer"
+                    data-lang="ru">
                     <span>🇷🇺</span> <span>RU</span>
                 </button>
-                <button onclick="setLanguage('de')" class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1" data-lang="de">
+                <button onclick="setLanguage('de')"
+                    class="lang-btn px-2 py-1 rounded hover:bg-gray-800 transition flex items-center space-x-1 cursor-pointer"
+                    data-lang="de">
                     <span>🇩🇪</span> <span>DE</span>
                 </button>
             </div>
@@ -31,13 +41,16 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative h-[70vh] min-h-[450px] bg-cover bg-center flex items-end" 
-            style="background-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.4) 100%), url('images/hero/hero-01.jpg');">
+    <header class="relative h-[70vh] min-h-[450px] bg-cover bg-center flex items-end"
+        style="background-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.4) 100%), url('images/hero/hero-01.jpg');">
         <div class="max-w-6xl mx-auto px-6 pb-12 w-full text-white">
-            <span class="inline-block bg-emerald-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3" data-i18n="forSale">
+            <span
+                class="inline-block bg-emerald-600 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3"
+                data-i18n="forSale">
                 For Sale
             </span>
-            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-2" data-i18n="title">Beautiful Property in Goritsa</h1>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-2" data-i18n="title">Beautiful Property in
+                Goritsa</h1>
             <p class="text-lg md:text-xl text-gray-200" data-i18n="location">Bulgaria</p>
         </div>
     </header>
@@ -46,12 +59,18 @@
     <section class="bg-white border-b border-gray-200 shadow-sm sticky top-[33px] z-40">
         <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
             <div class="flex items-center space-x-6 md:space-x-10 text-sm md:text-base font-medium text-gray-700">
-                <div><span class="text-gray-400 block text-xs uppercase font-semibold" data-i18n="priceLabel">Price</span> <span data-i18n="priceVal">Contact for Price</span></div>
-                <div><span class="text-gray-400 block text-xs uppercase font-semibold" data-i18n="bedsLabel">Bedrooms</span> 3</div>
-                <div><span class="text-gray-400 block text-xs uppercase font-semibold" data-i18n="bathsLabel">Bathrooms</span> 2</div>
-                <div><span class="text-gray-400 block text-xs uppercase font-semibold" data-i18n="locLabel">Location</span> Goritsa</div>
+                <div><span class="text-gray-400 block text-xs uppercase font-semibold"
+                        data-i18n="priceLabel">Price</span> <span data-i18n="priceVal">Contact for Price</span></div>
+                <div><span class="text-gray-400 block text-xs uppercase font-semibold"
+                        data-i18n="bedsLabel">Bedrooms</span> 3</div>
+                <div><span class="text-gray-400 block text-xs uppercase font-semibold"
+                        data-i18n="bathsLabel">Bathrooms</span> 2</div>
+                <div><span class="text-gray-400 block text-xs uppercase font-semibold"
+                        data-i18n="locLabel">Location</span> Goritsa</div>
             </div>
-            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg transition text-sm" data-i18n="getInTouch">
+            <a href="#contact"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg transition text-sm"
+                data-i18n="getInTouch">
                 Get in Touch
             </a>
         </div>
@@ -59,15 +78,16 @@
 
     <!-- Main Content Grid -->
     <main class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
-        
+
         <!-- Left Column: Details & Gallery -->
         <div class="lg:col-span-2 space-y-12">
-            
+
             <!-- Description -->
             <section class="space-y-4">
                 <h2 class="text-2xl font-bold text-gray-900" data-i18n="aboutTitle">About the Property</h2>
                 <p class="text-gray-600 leading-relaxed" data-i18n="aboutText">
-                    Spacious residential property located in Goritsa. Features modern living spaces, great outdoor views, and well-maintained interiors throughout.
+                    Spacious residential property located in Goritsa. Features modern living spaces, great outdoor
+                    views, and well-maintained interiors throughout.
                 </p>
             </section>
 
@@ -75,10 +95,14 @@
             <section class="space-y-4">
                 <h3 class="text-xl font-bold text-gray-900" data-i18n="highlightsTitle">Highlights</h3>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-600">
-                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span data-i18n="h1">Fully furnished kitchen</span></li>
-                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span data-i18n="h2">Spacious living rooms & stairs</span></li>
-                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span data-i18n="h3">Panoramic outside views</span></li>
-                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span data-i18n="h4">Private yard & balconies</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
+                            data-i18n="h1">Fully furnished kitchen</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
+                            data-i18n="h2">Spacious living rooms & stairs</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
+                            data-i18n="h3">Panoramic outside views</span></li>
+                    <li class="flex items-center space-x-2"><span class="text-emerald-500 font-bold">✓</span><span
+                            data-i18n="h4">Private yard & balconies</span></li>
                 </ul>
             </section>
 
@@ -95,15 +119,18 @@
         <aside class="lg:col-span-1">
             <div id="contact" class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm sticky top-24 space-y-6">
                 <h3 class="text-xl font-bold text-gray-900" data-i18n="contactTitle">Interested in Viewing?</h3>
-                <p class="text-sm text-gray-500" data-i18n="contactSubtitle">Contact the owner directly to ask questions or schedule an inspection.</p>
-                
+                <p class="text-sm text-gray-500" data-i18n="contactSubtitle">Contact the owner directly to ask questions
+                    or schedule an inspection.</p>
+
                 <div class="space-y-3 pt-2">
-                    <a href="tel:+359000000000" class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition">
+                    <button onclick="contactPhone()"
+                        class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition cursor-pointer">
                         <span>📞</span> <span data-i18n="callSms">Call / SMS</span>
-                    </a>
-                    <a href="mailto:owner@example.com?subject=Inquiry regarding Goritsa Property" class="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-medium py-3 px-4 rounded-lg transition">
+                    </button>
+                    <button onclick="contactEmail()"
+                        class="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-medium py-3 px-4 rounded-lg transition cursor-pointer">
                         <span>✉️</span> <span data-i18n="sendEmail">Send Email</span>
-                    </a>
+                    </button>
                 </div>
 
                 <div class="border-t border-gray-100 pt-4 text-xs text-gray-400 text-center" data-i18n="privateSale">
@@ -114,10 +141,34 @@
 
     </main>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm cursor-pointer"
+        onclick="closeLightbox()">
+        <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center"
+            onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Enlarged photo"
+                class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
+            <button onclick="closeLightbox()"
+                class="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-gray-300 transition cursor-pointer">&times;</button>
+        </div>
+    </div>
+
     <!-- Translations & Gallery Renderer Script -->
-<!-- Gallery Renderer Script -->
-<!-- Translations & Gallery Renderer Script -->
     <script>
+        // UPDATE YOUR PHONE AND EMAIL DETAILS HERE:
+        function contactEmail() {
+            const user = "owner";           // Replace with your email username
+            const domain = "example.com";   // Replace with your email domain
+            window.location.href = `mailto:${user}@${domain}?subject=Inquiry regarding Goritsa Property`;
+        }
+
+        function contactPhone() {
+            const country = "+359";         // Country code
+            const number = "880000000";     // Replace with your phone number (exclude leading zero)
+            window.location.href = `tel:${country}${number}`;
+        }
+
         const translations = {
             en: {
                 forSale: "For Sale",
@@ -213,7 +264,7 @@
                 h4: "Privater Garten & Balkone",
                 galleryTitle: "Fotogalerie",
                 contactTitle: "Interesse an einer Besichtigung?",
-                contact Schritte: "Kontaktieren Sie den Eigentümer direkt für Fragen oder Besichtigungstermine.",
+                contactSubtitle: "Kontaktieren Sie den Eigentümer direkt für Fragen oder Besichtigungstermine.",
                 callSms: "Anrufen / SMS",
                 sendEmail: "E-Mail senden",
                 privateSale: "Privatverkauf durch Eigentümer.",
@@ -243,7 +294,26 @@
         const savedLang = localStorage.getItem("preferred_lang") || "en";
         setLanguage(savedLang);
 
-        // Generously high bounds so it catches all images, with error-handling below
+        // Lightbox Functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Gallery Population with automatic error handling for missing files
         const galleryConfig = [
             { dir: 'livingroom', count: 15 },
             { dir: 'kitchen', count: 10 },
@@ -253,23 +323,23 @@
         ];
 
         const galleryGrid = document.getElementById('gallery-grid');
-        
+
         galleryConfig.forEach(category => {
             for (let i = 1; i <= category.count; i++) {
                 const num = String(i).padStart(2, '0');
                 const src = `images/${category.dir}/${category.dir}-${num}.jpg`;
-                
+
                 const card = document.createElement('div');
-                card.className = "overflow-hidden rounded-lg shadow-sm border border-gray-100 bg-white group";
-                
+                card.className = "overflow-hidden rounded-lg shadow-sm border border-gray-100 bg-white group cursor-pointer";
+                card.onclick = () => openLightbox(src);
+
                 const img = document.createElement('img');
                 img.src = src;
                 img.alt = `${category.dir} view`;
                 img.loading = "lazy";
                 img.className = "w-full h-56 object-cover group-hover:scale-105 transition duration-300";
-                
-                // If an image doesn't exist on disk, completely hide the card container automatically
-                img.onerror = function() {
+
+                img.onerror = function () {
                     card.style.display = 'none';
                 };
 
@@ -285,4 +355,5 @@
     </footer>
 
 </body>
+
 </html>

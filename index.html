@@ -257,6 +257,10 @@
     <script>
         // --- CONFIGURE YOUR REAL EMAIL HERE ---
         const ownerEmail = "goritsa_house123@proton.me";
+        const globalConfig = {
+            price: "155,000 €" // <--- Change your price here anytime
+        };
+
 
         let correctAnswer = 0;
         let activeContactValue = "";
@@ -317,6 +321,7 @@
             if (e.key === 'Enter') verifyCaptcha();
         });
 
+
         function setLanguage(lang) {
             const currentData = translations[lang];
             if (!currentData) return;
@@ -333,11 +338,23 @@
             document.querySelectorAll("[data-i18n-meta]").forEach(el => {
                 const key = el.getAttribute("data-i18n-meta");
                 if (currentData.meta && currentData.meta[key]) {
-                    el.textContent = currentData.meta[key];
+                    let val = currentData.meta[key];
+
+                    // Dynamically replace {price} placeholder with globalConfig.price
+                    if (typeof val === 'string' && val.includes('{price}')) {
+                        val = val.replace('{price}', globalConfig.price);
+                    }
+
+                    el.textContent = val;
                 }
             });
 
-            // 3. Update Placeholders
+            // 3. Update Document Browser Title Tag as well
+            if (currentData.meta && currentData.meta.title) {
+                document.title = currentData.meta.title.replace('{price}', globalConfig.price);
+            }
+
+            // 4. Update Placeholders
             document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
                 const key = el.getAttribute("data-i18n-placeholder");
                 if (currentData.ui && currentData.ui[key]) {
@@ -345,7 +362,7 @@
                 }
             });
 
-            // 4. Highlight Active Language Flag Button
+            // 5. Highlight Active Language Flag Button
             document.querySelectorAll(".lang-btn").forEach(btn => {
                 if (btn.getAttribute("data-lang") === lang) {
                     btn.classList.add("bg-gray-800", "border", "border-gray-700");
@@ -356,6 +373,7 @@
 
             localStorage.setItem("preferred_lang", lang);
         }
+
 
         const savedLang = localStorage.getItem("preferred_lang") || "en";
         setLanguage(savedLang);

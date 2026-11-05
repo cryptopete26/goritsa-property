@@ -1,6 +1,6 @@
 window.lang_de = {
   meta: {
-    title: "Möbliertes Haus in Goritsa",
+    title: "Möbliertes Haus in Goritsa, 160000€ VB",
     location: "Goritsa, Gemeinde Pomorie, Bulgarien",
     price:
       "160000€ (Verhandelbar bei Barzahlung & schnellem Abschluss)",

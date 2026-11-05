@@ -1,6 +1,6 @@
 window.lang_en = {
   meta: {
-    title: "Furnished House in Goritsa",
+    title: "Furnished House in Goritsa 160000€ or best offer",
     location: "Goritsa, Pomorie Municipality, Bulgaria",
     price:
       "160000€ (Subject to reduction for cash buyers & fast deals)",
@@ -9,7 +9,7 @@ window.lang_en = {
     plotSize: "660 m²",
     houseSize: "186.57 m²",
     act: "Act 16",
-    noCommission: "NO BROKER & NO COMMISSION",
+    noCommission: "NO AGENT & NO COMMISSION",
   },
   ui: {
     forSale: "For Sale",

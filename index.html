@@ -5,6 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Showcase | Goritsa Property</title>
+
+    <meta name="description"
+        content="Furnished house for sale in Goritsa, Pomorie, Bulgaria. Продажба на къща в Горица, Поморие. Дом на Черно море. Haus kaufen Bulgarien.">
+    <meta name="keywords"
+        content="property bulgaria, property black sea, property nessebar, property pomorie, имот българия, имоти черно море, недвижими имоти поморие, несебър имоти, haus kaufen bulgarien, immobilien schwarzes meer, недвижимость болгария, купить дом поморие">
+    <meta name="author" content="Goritsa Property">
+    <link rel="canonical" href="https://cryptopete26.github.io/goritsa-property/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cryptopete26.github.io/goritsa-property/">
+    <meta property="og:title" content="Furnished House in Goritsa | Pomorie & Black Sea Property For Sale">
+    <meta property="og:description"
+        content="Spacious 3-bedroom furnished house with Act 16 and 660 m² yard near Sunny Beach. No broker commission! / Продажба на къща без комисиона.">
+    <meta property="og:image" content="https://cryptopete26.github.io/goritsa-property/images/hero/hero-01.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="bg_BG">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <link rel="alternate" hreflang="en" href="https://cryptopete26.github.io/goritsa-property/">
+    <link rel="alternate" hreflang="bg" href="https://cryptopete26.github.io/goritsa-property/">
+    <link rel="alternate" hreflang="ru" href="https://cryptopete26.github.io/goritsa-property/">
+    <link rel="alternate" hreflang="de" href="https://cryptopete26.github.io/goritsa-property/">
+    <link rel="alternate" hreflang="x-default" href="https://cryptopete26.github.io/goritsa-property/">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -326,6 +351,8 @@
             const currentData = translations[lang];
             if (!currentData) return;
 
+            document.documentElement.lang = lang;
+
             // 1. Update UI Text Elements
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
@@ -354,7 +381,48 @@
                 document.title = currentData.meta.title.replace('{price}', globalConfig.price);
             }
 
-            // 4. Update Placeholders
+            // 4. Update Search Engine & Social Metadata
+            if (currentData.meta && currentData.meta.description) {
+                let descEl = document.querySelector('meta[name="description"]');
+                if (!descEl) {
+                    descEl = document.createElement('meta');
+                    descEl.name = 'description';
+                    document.head.appendChild(descEl);
+                }
+                descEl.content = currentData.meta.description.replace('{price}', globalConfig.price);
+            }
+
+            if (currentData.meta && currentData.meta.ogTitle) {
+                let ogTitleEl = document.querySelector('meta[property="og:title"]');
+                if (!ogTitleEl) {
+                    ogTitleEl = document.createElement('meta');
+                    ogTitleEl.setAttribute('property', 'og:title');
+                    document.head.appendChild(ogTitleEl);
+                }
+                ogTitleEl.content = currentData.meta.ogTitle.replace('{price}', globalConfig.price);
+            }
+
+            if (currentData.meta && currentData.meta.ogDescription) {
+                let ogDescEl = document.querySelector('meta[property="og:description"]');
+                if (!ogDescEl) {
+                    ogDescEl = document.createElement('meta');
+                    ogDescEl.setAttribute('property', 'og:description');
+                    document.head.appendChild(ogDescEl);
+                }
+                ogDescEl.content = currentData.meta.ogDescription.replace('{price}', globalConfig.price);
+            }
+
+            if (currentData.meta && currentData.meta.ogLocale) {
+                let ogLocaleEl = document.querySelector('meta[property="og:locale"]');
+                if (!ogLocaleEl) {
+                    ogLocaleEl = document.createElement('meta');
+                    ogLocaleEl.setAttribute('property', 'og:locale');
+                    document.head.appendChild(ogLocaleEl);
+                }
+                ogLocaleEl.content = currentData.meta.ogLocale;
+            }
+
+            // 5. Update Placeholders
             document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
                 const key = el.getAttribute("data-i18n-placeholder");
                 if (currentData.ui && currentData.ui[key]) {
@@ -362,7 +430,7 @@
                 }
             });
 
-            // 5. Highlight Active Language Flag Button
+            // 6. Highlight Active Language Flag Button
             document.querySelectorAll(".lang-btn").forEach(btn => {
                 if (btn.getAttribute("data-lang") === lang) {
                     btn.classList.add("bg-gray-800", "border", "border-gray-700");

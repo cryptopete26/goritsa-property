@@ -1,8 +1,8 @@
 window.lang_de = {
   meta: {
-    title: "Möbliertes Haus in Goritsa PRIVATVERKAUF, {price} VB",
+    title: "Möbliertes Haus in Goritsa | Privatverkauf, Pomorie",
     description:
-      "Möbliertes Haus in Goritsa, Pomorie, Bulgarien zum Verkauf. 186 m² Wohnfläche, 660 m² Grundstück, Akt 16, provisionsfrei. Nahe am Schwarzen Meer und Sunny Beach.",
+      "Möbliertes Haus in Goritsa, Pomorie, Bulgarien zum Verkauf. 186 m² Wohnfläche, 660 m² Grundstück, Akt 16, provisionsfrei. Privatverkauf nahe Sunny Beach und dem Schwarzen Meer.",
     ogTitle: "Haus in Goritsa | Immobilien am Schwarzen Meer",
     ogDescription:
       "Geräumiges möbliertes Haus mit Akt 16 und 660 m² Grundstück nahe Sunny Beach. Provisionsfrei.",

@@ -30,6 +30,54 @@
     <link rel="alternate" hreflang="de" href="https://cryptopete26.github.io/goritsa-property/">
     <link rel="alternate" hreflang="x-default" href="https://cryptopete26.github.io/goritsa-property/">
 
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SingleFamilyResidence",
+          "name": "Furnished House in Goritsa, Pomorie, Bulgaria",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Goritsa",
+            "addressLocality": "Pomorie",
+            "addressRegion": "Burgas",
+            "addressCountry": "BG"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 42.5919,
+            "longitude": 27.6574
+          },
+          "numberOfBedrooms": 3,
+          "numberOfRooms": 7,
+          "floorSize": {
+            "@type": "QuantitativeValue",
+            "value": 186.57,
+            "unitCode": "MTK"
+          },
+          "landArea": {
+            "@type": "QuantitativeValue",
+            "value": 660,
+            "unitCode": "MTK"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "EUR",
+              "price": "Contact for price"
+            },
+            "seller": {
+              "@type": "Person",
+              "name": "Owner"
+            }
+          },
+          "description": "Furnished property for sale in Goritsa, Pomorie, Bulgaria with Act 16, 660 m² yard, 186.57 m² house, and no broker commission.",
+          "url": "https://cryptopete26.github.io/goritsa-property/"
+        }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -98,6 +146,30 @@
                 Bulgaria</p>
         </div>
     </header>
+
+    <section class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 py-10">
+            <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Property for sale in Goritsa, Pomorie, Bulgaria</h2>
+                <a href="goritsa-property.html" class="inline-flex items-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700">Local area guide</a>
+            </div>
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+                <p><strong>Property Bulgaria</strong> searchers often look for a furnished house in Goritsa, Pomorie, near Sunny Beach, with sea air, Act 16, and a large yard. This listing offers a private sale home in a peaceful Bulgarian village with mountain and sea influences.</p>
+                <p lang="bg"><strong>Имоти България</strong> и търсения за къща в Горица, Поморие, близо до Слънчев бряг, с чист въздух, Акт 16 и голям двор. Това е частна продажба на дом в тихо българско село с планинско и морско влияние.</p>
+                <p lang="ru"><strong>Недвижимость Болгария</strong> и поиск дом в Горице, Поморие рядом с Солнечным Берегом, чистым воздухом, Акт 16 и большим участком. Это частная продажа дома в спокойной болгарской деревне у моря и гор.</p>
+                <p lang="de"><strong>Immobilien Bulgarien</strong> und Häuser in Goritsa, Pomorie, nahe Sunny Beach, mit sauberer Luft, Akt 16 und großem Grundstück. Dies ist ein Privatverkauf in einem ruhigen bulgarischen Dorf mit Berg- und Meeresklima.</p>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-gray-700">
+                <span class="rounded-full bg-gray-100 px-3 py-1">property bulgaria</span>
+                <span class="rounded-full bg-gray-100 px-3 py-1">property black sea</span>
+                <span class="rounded-full bg-gray-100 px-3 py-1">property pomorie</span>
+                <span class="rounded-full bg-gray-100 px-3 py-1">house for sale sunny beach</span>
+                <span class="rounded-full bg-gray-100 px-3 py-1">имоти българия</span>
+                <span class="rounded-full bg-gray-100 px-3 py-1">недвижимость болгария</span>
+                <span class="rounded-full bg-gray-100 px-3 py-1">immobilien bulgarien</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Key Stats Bar -->
     <section class="bg-white border-b border-gray-200 shadow-sm sticky top-[33px] z-40">
@@ -378,7 +450,7 @@
 
             // 3. Update Document Browser Title Tag as well
             if (currentData.meta && currentData.meta.title) {
-                document.title = currentData.meta.title.replace('{price}', globalConfig.price);
+                document.title = currentData.meta.title;
             }
 
             // 4. Update Search Engine & Social Metadata
@@ -389,7 +461,8 @@
                     descEl.name = 'description';
                     document.head.appendChild(descEl);
                 }
-                descEl.content = currentData.meta.description.replace('{price}', globalConfig.price);
+                const descText = currentData.meta.description;
+                descEl.content = descText.includes('{price}') ? descText.replace('{price}', globalConfig.price) : descText;
             }
 
             if (currentData.meta && currentData.meta.ogTitle) {
@@ -399,7 +472,8 @@
                     ogTitleEl.setAttribute('property', 'og:title');
                     document.head.appendChild(ogTitleEl);
                 }
-                ogTitleEl.content = currentData.meta.ogTitle.replace('{price}', globalConfig.price);
+                const ogTitleText = currentData.meta.ogTitle;
+                ogTitleEl.content = ogTitleText.includes('{price}') ? ogTitleText.replace('{price}', globalConfig.price) : ogTitleText;
             }
 
             if (currentData.meta && currentData.meta.ogDescription) {
@@ -409,7 +483,8 @@
                     ogDescEl.setAttribute('property', 'og:description');
                     document.head.appendChild(ogDescEl);
                 }
-                ogDescEl.content = currentData.meta.ogDescription.replace('{price}', globalConfig.price);
+                const ogDescText = currentData.meta.ogDescription;
+                ogDescEl.content = ogDescText.includes('{price}') ? ogDescText.replace('{price}', globalConfig.price) : ogDescText;
             }
 
             if (currentData.meta && currentData.meta.ogLocale) {

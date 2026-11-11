@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://goritsa-property.pages.dev/sitemap.xml

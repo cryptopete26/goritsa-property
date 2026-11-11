@@ -1,6 +1,6 @@
 window.lang_en = {
   meta: {
-    title: "Furnished House in Goritsa | Private Sale, Pomorie, Bulgaria",
+    title: "Furnished House in Goritsa | Private Sale, {price}, Pomorie, Bulgaria",
     description:
       "Furnished house for sale in Goritsa, Pomorie, Bulgaria. 186 m² home, 660 m² yard, Act 16, no commission. Private sale near Sunny Beach and the Black Sea.",
     ogTitle: "Furnished House in Goritsa | Pomorie & Black Sea Property For Sale",

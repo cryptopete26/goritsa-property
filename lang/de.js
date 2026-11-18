@@ -28,7 +28,7 @@ window.lang_de = {
     getInTouch: "Kontaktieren",
     aboutTitle: "Objektbeschreibung",
     aboutText:
-      "PREIS IST VERHANDELBAR bei Barzahlung und schnellem Abschluss. (EINWANDFREIE DOKUMENTE). PROVISIONSFREI (PRIVATVERKAUF), günstig verkaufe ich ein möbliertes Haus in wunderbarer Lage in Goritsa, Gemeinde Pomorie. Das Dorf liegt am Fuße des Balkangebirges, 23 km von Sunny Beach entfernt (20 Min. zum Meer über eine neue Straße). Bekannt für saubere Luft mit Berg- und Meeres-Einfluss, trockenes Klima, sonnig und ruhig. Komplett freistehendes Haus ohne Wartungsgebühren, 186,57 qm Fläche, 660 qm Grundstück, mit Akt 16.",
+      "PREIS IST VERHANDELBAR bei Barzahlung und schnellem Abschluss. PROVISIONSFREI (PRIVATVERKAUF), günstig verkaufe ich ein möbliertes Haus in wunderbarer Lage in Goritsa, Gemeinde Pomorie. Das Dorf liegt am Fuße des Balkangebirges, 23 km von Sunny Beach entfernt (20 Min. zum Meer über eine neue Straße). Bekannt für saubere Luft mit Berg- und Meeres-Einfluss, trockenes Klima, sonnig und ruhig. Komplett freistehendes Haus ohne Wartungsgebühren, 186,57 qm Fläche, 660 qm Grundstück, mit Akt 16.",
     detailsTitle: "Zusätzliche Informationen & Raumaufteilung",
     detailsText:
       "Das Haus verfügt über 3 Betondecken, Innendämmung, 3 Klimaanlagen, Holzofen, Alarmanlage und Sat-TV. Süd- und Ostausrichtung. Voll möbliert und sehr wenig genutzt. Eine Mineralquelle ist in 10 Gehminuten erreichbar, die Luft ist heilend bei Allergien und Asthma.",

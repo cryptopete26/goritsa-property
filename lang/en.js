@@ -28,7 +28,7 @@ window.lang_en = {
     getInTouch: "Get in Touch",
     aboutTitle: "Property Description",
     aboutText:
-      "PRICE IS NEGOTIABLE for cash buyers and fast deals. (PERFECT DOCUMENTS). NO BROKER & NO COMMISSION. Advantageously selling a furnished house in a wonderful location in Goritsa village, Pomorie municipality. Located at the foothills of Stara Planina, 23 km from Sunny Beach (20 min to the sea via new road). Known for clean air with mountain and sea influence, dry climate, sunny, quiet, with full infrastructure. Fully independent house, no maintenance fees, 186.57 sq.m area, 660 sq.m plot, with Act 16.",
+      "PRICE IS NEGOTIABLE for cash buyers and fast deals. NO BROKER & NO COMMISSION. Advantageously selling a furnished house in a wonderful location in Goritsa village, Pomorie municipality. Located at the foothills of Stara Planina, 23 km from Sunny Beach (20 min to the sea via new road). Known for clean air with mountain and sea influence, dry climate, sunny, quiet, with full infrastructure. Fully independent house, no maintenance fees, 186.57 sq.m area, 660 sq.m plot, with Act 16.",
     detailsTitle: "Additional Information & Layout",
     detailsText:
       "The house features 3 concrete slabs, internal thermal insulation, 3 ACs, wood stove, security system (СОТ), and satellite TV. South and east orientation. Fully furnished and used very little. A mineral water spring is 10 min walk away, and the air is healing for allergies and asthma.",
